@@ -1,7 +1,11 @@
 {%extends "base.html"%}
 {%block body%}
 <h1>This is Home Page</h1>
-<h1>Hello {{name}}</h1>
-<h2>Yor age is {{age}}</h2>
-<h3>You get $ {{pay}}</h3>
+{% if user.username|length%}
+<h1>Hello {{user.username}}</h1>
+<h2>Yor password is {{user.password}}</h2>
+<h3>You email is: {{user.email}}</h3>
+{% else %}
+<a href="login"><h1>Please Login</h1></a>
+{% endif %}
 {%endblock body%}
